@@ -9,7 +9,7 @@ def get_count(channel=None, url=None):
 	}
 	if channel == "googlePlus":
 		# Google did not release any public API to get +1's count at the moment,
-		# there is only an URL that builds a GooglePlus widget containing a =1 button
+		# there is only an URL that builds a GooglePlus widget containing a +1 button
 		# and the shares count.
 		# We have to parse it manually to retrieve the count...
 		# See http://stackoverflow.com/questions/7403553/how-do-i-get-the-counter-of-a-google-plus-1-button
