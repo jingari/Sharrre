@@ -27,7 +27,7 @@
     title: '',
     url: document.location.href,
     text: document.title,
-    urlCurl: 'sharrre.php',  //PHP script for google plus...
+    urlCurl: '',  // Server-side script for google plus and Stumbleupon...
     count: {}, //counter by social network
     total: 0,  //total of sharing
     shorterTotal: true, //show total by k or M when number is to big
