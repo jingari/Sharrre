@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-import urllib2, re
+import urllib2, re, json
 
 def get_count(channel=None, url=None):
 	data = {
@@ -29,5 +29,12 @@ def get_count(channel=None, url=None):
 		else:
 			# If the RegExp did not match anything, the HTML has probably changed...
 			data["count"] = -1
+
+	elif channel == "stumbleupon":
+		STUMBLEUPON_URL = "http://www.stumbleupon.com/services/1.01/badge.getinfo?url=%s"
+		response = urllib2.urlopen(STUMBLEUPON_URL % (url,), None, 10)
+		response_json = json.loads(response.read())
+		response.close()
+		data["count"] = response_json["result"].get("views", 0)
 
 	return data
